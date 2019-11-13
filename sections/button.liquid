@@ -1,0 +1,67 @@
+<div id="section-button">
+    <div class="container">
+        <a href="{{ section.settings.button }}" 
+            class="mybutton" 
+            style="
+            color : {{ section.settings.color_btn }}; 
+            background-color: {{ section.settings.background_color_btn}}; 
+            font-size: {{ section.settings.height_btn }}px; ">
+            {{ section.settings.textbutton }}
+        </a>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Button",
+    "settings": [
+        {
+            "id": "button",
+            "type": "text",
+            "label": "Button",
+            "default": "Button"
+        },
+        {
+            "id": "textbutton",
+            "type": "text",
+            "label": "Texte",
+            "default": "Test button"
+        },
+        {
+            "type": "color",
+            "id": "color_btn",
+            "label": "Couleur du texte",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "background_color_btn",
+            "label": "Couleur de fond",
+            "default": "#000000"
+        },
+        {
+            "type": "range",
+            "id": "height_btn",
+            "label": "Taille",
+            "min": 10,
+            "max": 40,
+            "default": 30,
+            "unit": "px",
+            "step": 1
+        }
+
+    ]
+    ,
+    "presets": [
+        {
+            "name": "Button",
+            "category":"Button"
+
+        }
+    ]
+}
+{% endschema %}
+
+{% stylesheet %}
+    
+{% endstylesheet %}
