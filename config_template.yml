@@ -1,0 +1,6 @@
+development:
+  password: 
+  theme_id: "79219785775"
+  store: flowshopy.myshopify.com
+  ignore_files:
+    - config/settings_data.json
