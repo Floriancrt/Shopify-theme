@@ -1,0 +1,47 @@
+<nav class="my-navbar">
+        <img src="{{ section.settings.logo-inverted | img_url: 'master' }}"
+        alt="{{ section.settings.logo-inverted.alt | default: shop.name }}"
+class="my-img" itemprop="logo" >
+
+    {% for link in linklists[section.settings.menu-cours-iim].links %}
+    <ul>
+    <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+    </li>
+</ul>
+    {% endfor %}
+</nav>
+
+
+{% schema %}
+{
+    "name": "Barre de Navigation",
+    "settings": [
+    {
+        "type": "link_list",
+        "id": "menu-cours-iim",
+        "label": "Menu",
+        "default": "main-menu",
+        "info": "La navigation sera réduite à un bouton de menu si les liens sont trop longs. [En savoir plus](https://help.shopify.com/manual/using-themes/themes-by-shopify/brooklyn#navigation-tips-tips-specific)"
+    },
+    {
+        "type": "image_picker",
+        "id": "logo-inverted",
+        "label": "Choisir l'image"
+    
+    }
+    ],
+
+    "presets": [
+    {
+        "name": "Barre de Navigation",
+        "category": "Cours IIM"
+    }
+    ]
+}
+{% endschema %}
+
+{% stylesheet %}
+    
+
+{% endstylesheet %}
