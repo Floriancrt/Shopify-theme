@@ -1,0 +1,384 @@
+<div class="slideshow-container" style="max-width: {{ section.settings.max_width_slide1 }}%;">
+        <div class="mySlides1" id="slide">
+            <img
+                src="{{ section.settings.image_one | img_url: 'master' }}"
+                style="width:100%; height:40vh;" onclick="plusSlides(1, 0)"
+                />
+            <div class="title-wrapper" style="color: {{ section.settings.color_text_one }}">
+                <p>{{ section.settings.entitled_image_one }}</p>
+                <p>{{ section.settings.price_image_one }}</p>
+            </div>
+            <div class="btn_shop">
+                <button href="{{ section.settings.button }}"
+                class="btn btn--1"><b>{{ section.settings.textbutton }}</b>
+                </button>
+            </div>
+        </div>
+        <div class="mySlides1">
+            <img
+            src={{ section.settings.image_two | img_url: 'master' }}
+            style="width:100%; height:40vh;"
+            onclick="plusSlides(1, 0)"
+            />
+            <div class="title-wrapper" style="color: {{ section.settings.color_text_two }}">
+                <p>{{ section.settings.entitled_image_two }}</p>
+                <p>{{ section.settings.price_image_two }}</p>
+            </div>
+            <div class="btn_shop">
+                <button href="{{ section.settings.button }}"
+                class="btn btn--1"><b>{{ section.settings.textbutton }}</b>
+                </button>
+            </div>
+        </div>
+        <div class="mySlides1">
+            <img
+            src={{ section.settings.image_three | img_url: 'master' }}
+            style="width:100%; height:40vh;"
+            onclick="plusSlides(1, 0)"
+            />
+            <div class="title-wrapper" style="color: {{ section.settings.color_text_three }}">
+                <p>{{ section.settings.entitled_image_three }}</p>
+                <p>{{ section.settings.price_image_three }}</p>
+            </div>
+            <div class="btn_shop">
+                <button href="{{ section.settings.button }}"
+                class="btn btn--1"><b>{{ section.settings.textbutton }}</b>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="slideshow-container" style="max-width: {{ section.settings.max_width_slide2 }}%;">
+        <div class="mySlides2" id="slide">
+            <img
+            src={{ section.settings.image_four | img_url: 'master' }}
+            style="width:100%; height:40vh;"
+            onclick="plusSlides(1, 1)"
+            />
+            <div class="title-wrapper" style="color: {{ section.settings.color_text_four }}">
+                <p>{{ section.settings.entitled_image_four }}</p>
+                <p>{{ section.settings.price_image_four }}</p>
+            </div>
+            <div class="btn_shop">
+                <button href="{{ section.settings.button }}"
+                class="btn btn--1"><b>{{ section.settings.textbutton }}</b>
+                </button>
+            </div>
+        </div>
+        <div class="mySlides2">
+            <img
+            src={{ section.settings.image_five | img_url: 'master' }}
+            style="width:100%; height:40vh;"
+            onclick="plusSlides(1, 1)"
+            />
+            <div class="title-wrapper" style="color: {{ section.settings.color_text_five }}">
+                <p>{{ section.settings.entitled_image_five }}</p>
+                <p>{{ section.settings.price_image_five }}</p>
+            </div>
+            <div class="btn_shop">
+                <button href="{{ section.settings.button }}"
+                class="btn btn--1"><b>{{ section.settings.textbutton }}</b>
+                </button>
+            </div>
+        </div>
+        <div class="mySlides2">
+            <img
+            src={{ section.settings.image_six | img_url: 'master' }}
+            style="width:100%; height:40vh;"
+            onclick="plusSlides(1, 1)"
+            />
+            <div class="title-wrapper" style="color: {{ section.settings.color_text_six }}">
+                <p>{{ section.settings.entitled_image_six }}</p>
+                <p>{{ section.settings.price_image_six }}</p>
+            </div>
+            <div class="btn_shop">
+                <button href="{{ section.settings.button }}"
+                class="btn btn--1"><b>{{ section.settings.textbutton }}</b>
+                </button>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+
+var slideIndex = [1, 1];
+var slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+    showSlides(slideIndex[no] += n, no);
+
+}
+
+function showSlides(n, no) {
+    var i;
+    var x = document.getElementsByClassName(slideId[no]);
+    if (n > x.length) {
+        slideIndex[no] = 1
+    }
+    if (n < 1) {
+        slideIndex[no] = x.length
+    }
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    x[slideIndex[no] - 1].style.display = "block";
+}
+
+
+</script>
+
+
+{% stylesheet %}
+* {
+    box-sizing: border-box
+}
+ .mySlides1, .mySlides2 {
+    display: none;
+    cursor: pointer;
+    cursor: -webkit-image-set(url("https://cdn.shopify.com/s/files/1/0065/1244/3481/t/2/assets/cursor-eye@1x.png")) 33 33,auto
+    
+}
+ img {
+    vertical-align: middle;
+    
+    
+}
+/* Slideshow container */
+ .slideshow-container {
+     max-width: 1000px;
+     position: relative;
+     margin: auto;
+}
+ .title-wrapper {
+     color: white;
+     font-size: 2em;
+     text-align: center;
+     position: absolute;
+     left: 0%;
+     right:70%;
+     top: 25%;
+     bottom:25%;
+}
+
+.btn_shop {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    position: absolute;
+    left: 70%;
+    right:0%;
+    top: 25%;
+    bottom:25%;
+}
+
+
+ .prev, .next {
+     cursor: pointer;
+     position: absolute;
+     top: 50%;
+     width: auto;
+     padding: 16px;
+     margin-top: -22px;
+     color: white;
+     font-weight: bold;
+     font-size: 18px;
+     transition: 0.6s ease;
+     border-radius: 0 3px 3px 0;
+     user-select: none;
+}
+ .next {
+     right: 0;
+     border-radius: 3px 0 0 3px;
+}
+ .prev:hover, .next:hover {
+     background-color: #f1f1f1;
+     color: black;
+}
+{% endstylesheet %}
+
+    
+{% schema %}
+{
+    "name": "Mix and Match",
+    "settings": [
+        {
+            "id": "image_one",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "entitled_image_one",
+            "type": "text",
+            "label": "Intitulé",
+            "default": "Intitulé"
+        },
+        {
+            "id": "price_image_one",
+            "type": "text",
+            "label": "Prix",
+            "default": "Prix"
+        },
+        {
+            "type": "color",
+            "id": "color_text_one",
+            "label": "Couleur du texte",
+            "default": "#FFFFFF"
+        },
+        {
+            "id": "image_two",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "entitled_image_two",
+            "type": "text",
+            "label": "Intitulé",
+            "default": "Intitulé"
+        },
+        {
+            "id": "price_image_two",
+            "type": "text",
+            "label": "Prix",
+            "default": "Prix"
+        },
+        {
+            "type": "color",
+            "id": "color_text_two",
+            "label": "Couleur du texte",
+            "default": "#FFFFFF"
+        },
+        {
+            "id": "image_three",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "entitled_image_three",
+            "type": "text",
+            "label": "Intitulé",
+            "default": "Intitulé"
+        },
+        {
+            "id": "price_image_three",
+            "type": "text",
+            "label": "Prix",
+            "default": "Prix"
+        },
+        {
+            "type": "color",
+            "id": "color_text_three",
+            "label": "Couleur du texte",
+            "default": "#FFFFFF"
+        },
+        {
+            "type": "range",
+            "id": "max_width_slide1",
+            "label": "Largeur du diaporama",
+            "min": 40,
+            "max": 100,
+            "default": 80,
+            "unit": "%",
+            "step": 1
+        },
+        {
+            "id": "image_four",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "entitled_image_four",
+            "type": "text",
+            "label": "Intitulé",
+            "default": "Intitulé"
+        },
+        {
+            "id": "price_image_four",
+            "type": "text",
+            "label": "Prix",
+            "default": "Prix"
+        },
+        {
+            "type": "color",
+            "id": "color_text_four",
+            "label": "Couleur du texte",
+            "default": "#FFFFFF"
+        },
+        {
+            "id": "image_five",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "entitled_image_five",
+            "type": "text",
+            "label": "Intitulé",
+            "default": "Intitulé"
+        },
+        {
+            "id": "price_image_five",
+            "type": "text",
+            "label": "Prix",
+            "default": "Prix"
+        },
+        {
+            "type": "color",
+            "id": "color_text_five",
+            "label": "Couleur du texte",
+            "default": "#FFFFFF"
+        },
+        {
+            "id": "image_six",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "entitled_image_six",
+            "type": "text",
+            "label": "Intitulé",
+            "default": "Intitulé"
+        },
+        {
+            "id": "price_image_six",
+            "type": "text",
+            "label": "Prix",
+            "default": "Prix"
+        },
+        {
+            "type": "color",
+            "id": "color_text_six",
+            "label": "Couleur du texte",
+            "default": "#FFFFFF"
+        },
+        {
+            "type": "range",
+            "id": "max_width_slide2",
+            "label": "Largeur du diaporama",
+            "min": 40,
+            "max": 100,
+            "default": 80,
+            "unit": "%",
+            "step": 1
+        },
+        {
+            "id": "button",
+            "type": "text",
+            "label": "Button",
+            "default": "Button"
+        },
+        {
+            "id": "textbutton",
+            "type": "text",
+            "label": "Texte",
+            "default": "Test button"
+        }
+    ]
+    ,
+    "presets": [
+        {
+            "category": "Cours IIM",
+            "name":"Mix and Match"
+        }
+    ]
+}
+{% endschema %}
